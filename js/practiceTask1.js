@@ -16,11 +16,24 @@ ar = [{
 ffa = (arr) => {
     var ret="";
     arr
+    .filter((v)=>{
+        return v.name != "г.Москва";
+    })
     .map((v) => {
-        ret+="<li>" + v.name + "</li>";
+        let child = "";
+        if( Array.isArray(v.child) ) child=ffa(v.child)
+        ret+="<li>" + v.name + child + "</li>";
     });
-        ret = "<ul>" + ret + "</ul>";
+    
+    ret="<ul>" + ret + "</ul>";
+    
     return ret;
 };
 
-document.write ( ffa(ar) );
+/*let buttonNav = document.querySelector('.button');
+
+buttonNav.onclick => {
+
+    buttonNav.classList.toggle('added')
+
+} */

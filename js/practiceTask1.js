@@ -30,6 +30,12 @@ ffa = (arr) => {
     return ret;
 };
 
+let mainNav = document.getElementById('navy');
+let buttonNav = document.querySelector('.button');
+
+buttonNav.addEventListener('click', function() {
+    mainNav.classList.toggle('closed');
+});
 /*let buttonNav = document.querySelector('.button');
 
 buttonNav.onclick => {
